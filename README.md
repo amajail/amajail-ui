@@ -29,9 +29,15 @@ Once published to GitHub:
 In your site's main CSS (e.g. `src/styles/global.css`):
 
 ```css
-@import "@amajail/ui/fonts";   /* loads Plus Jakarta Sans + JetBrains Mono */
-@import "@amajail/ui/styles";  /* tokens, base, component classes — also pulls in tailwindcss */
+@import "@amajail/ui/fonts";   /* Google Fonts — must be first */
+@import "tailwindcss";          /* required by Tailwind v4; install in consumer */
+@import "@amajail/ui/styles";  /* tokens (@theme), base, component classes */
 ```
+
+> The `@import "tailwindcss"` line stays in the consumer because the
+> Tailwind v4 Vite plugin resolves `tailwindcss` relative to the file that
+> owns `node_modules`. The shared package contributes the `@theme` block,
+> base styles, and component classes only.
 
 Then import components as needed:
 
