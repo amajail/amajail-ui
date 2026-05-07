@@ -1,0 +1,39 @@
+---
+interface TerminalLine {
+  cmd: string;
+  output: string;
+}
+
+interface Props {
+  lines: TerminalLine[];
+  title?: string;
+}
+
+const { lines, title = 'amajail@portfolio:~' } = Astro.props;
+---
+
+<div class="rounded-lg border border-border bg-surface overflow-hidden shadow-xl shadow-black/40">
+  <div class="flex items-center gap-2 border-b border-border bg-bg px-4 py-3">
+    <span class="h-3 w-3 rounded-full bg-[#ff5f57]"></span>
+    <span class="h-3 w-3 rounded-full bg-[#febc2e]"></span>
+    <span class="h-3 w-3 rounded-full bg-[#28c840]"></span>
+    <span class="ml-2 font-mono text-xs text-muted">{title}</span>
+  </div>
+
+  <div class="p-4 font-mono text-sm leading-relaxed md:p-6">
+    {lines.map((line) => (
+      <div class="mb-4 last:mb-0">
+        <div class="flex items-start gap-2">
+          <span class="select-none text-accent shrink-0">{'>'}</span>
+          <span class="text-text-primary">{line.cmd}</span>
+        </div>
+        <div class="mt-1 pl-4 text-muted whitespace-pre-line">{line.output}</div>
+      </div>
+    ))}
+
+    <div class="mt-2 flex items-center gap-2">
+      <span class="select-none text-accent">{'>'}</span>
+      <span class="inline-block h-4 w-2 bg-accent animate-blink"></span>
+    </div>
+  </div>
+</div>

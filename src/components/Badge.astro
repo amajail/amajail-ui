@@ -1,0 +1,14 @@
+---
+type Variant = 'success' | 'pending' | 'failed';
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+}
+
+const { variant = 'pending', class: className = '' } = Astro.props;
+---
+
+<span class={`badge badge-${variant} ${className}`.trim()}>
+  <slot />
+</span>

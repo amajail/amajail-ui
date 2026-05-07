@@ -1,0 +1,28 @@
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Fira Code', monospace;
+
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-2: #cbd5e1;
+  --color-text-primary: #0f172a;
+  --color-muted: #64748b;
+  --color-accent: #1d4ed8;
+  --color-accent-h: #1e40af;
+  --color-accent-cyan: #0891b2;
+  --color-accent-indigo: #6366f1;
+  --color-accent-pending: #f59e0b;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-btn: 0 4px 12px rgba(29, 78, 216, 0.25);
+  --shadow-btn-hover: 0 6px 20px rgba(29, 78, 216, 0.35);
+
+  --animate-blink: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  to { opacity: 0; }
+}

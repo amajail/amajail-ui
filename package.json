@@ -1,0 +1,26 @@
+{
+  "name": "@amajail/ui",
+  "version": "0.1.0",
+  "description": "Shared design tokens and components for amajail's Astro sites",
+  "type": "module",
+  "exports": {
+    "./styles": "./src/styles/index.css",
+    "./styles/tokens": "./src/styles/tokens.css",
+    "./styles/base": "./src/styles/base.css",
+    "./styles/components": "./src/styles/components.css",
+    "./fonts": "./src/fonts.css",
+    "./components/*": "./src/components/*"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "astro": "^5",
+    "tailwindcss": "^4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amajail/amajail-ui.git"
+  },
+  "license": "MIT"
+}

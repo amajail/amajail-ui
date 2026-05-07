@@ -1,0 +1,14 @@
+---
+interface Props {
+  strip?: boolean;
+  stripStyle?: string;
+  class?: string;
+}
+
+const { strip = false, stripStyle, class: className = '' } = Astro.props;
+---
+
+<div class={`card ${className}`.trim()}>
+  {strip && <div class="card-strip" style={stripStyle}></div>}
+  <slot />
+</div>
